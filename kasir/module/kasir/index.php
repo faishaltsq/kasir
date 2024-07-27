@@ -9,8 +9,8 @@ if (isset($_POST['input_barang'])) {
     $jumlah = $_POST['jumlah'];
 
     $produk_data = getProdukById($id_barang);
-    $harga_jual = $produk_data['harga_jual'];
-    $total = $harga_jual * $jumlah;
+    $harga_final = $produk_data['harga_final'];
+    $total = $harga_final * $jumlah;
 
     inputBarangKasir($id_barang, $jumlah, $total);
 

@@ -13,8 +13,11 @@
                     <th scope="col">Kategori</th>
                     <th scope="col">Nama Barang</th>
                     <th scope="col">Stok</th>
-                    <th scope="col">Harga Jual</th>
                     <th scope="col">Harga Beli</th>
+                    <!-- <th scope="col">Harga Jual</th> -->
+                    <th scope="col">Diskon</th>
+                    <th scoper="col">Keuntungan</th>
+                    <th scope="col">Harga Final</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
@@ -41,10 +44,19 @@
                                 <?= $row['stok'] ?>
                             </td>
                             <td>
+                                Rp. <?= $row['harga_beli'] ?>
+                            </td>
+                            <!-- <td>
                                 Rp. <?= $row['harga_jual'] ?>
+                            </td> -->
+                            <td>
+                                <?= $row['diskon'] ?>%
                             </td>
                             <td>
-                                Rp. <?= $row['harga_beli'] ?>
+                                <?= $row['untung'] ?>%
+                            </td>
+                            <td>
+                                Rp. <?= $row['harga_final'] ?>
                             </td>
                             <td>
                                 <a href="index.php?page=barang/edit&id_barang=<?= $row['id_barang'] ?>">Edit</a> | <a

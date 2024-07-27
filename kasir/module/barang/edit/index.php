@@ -46,13 +46,23 @@ if (isset($_POST["submit"])) {
                     <td><input type="text" name="stok" value="<?php echo $br['stok']; ?>" class="form-control"></td>
                 </tr>
                 <tr>
+                    <td><label for="harga_beli">Harga Beli:</label></td>
+                    <td><input type="text" name="harga_beli" value="<?php echo $br['harga_beli']; ?>"
+                            class="form-control"></td>
+                </tr>
+                <!-- <tr>
                     <td> <label for="harga_jual">Harga Jual:</label></td>
                     <td><input type="text" name="harga_jual" value="<?php echo $br['harga_jual']; ?>"
                             class="form-control"></td>
+                </tr> -->
+                <tr>
+                    <td> <label for="diskon">Diskon (%):</label></td>
+                    <td><input type="text" name="diskon" value="<?php echo $br['diskon']; ?>"
+                            class="form-control"></td>
                 </tr>
                 <tr>
-                    <td><label for="harga_beli">Harga Beli:</label></td>
-                    <td><input type="text" name="harga_beli" value="<?php echo $br['harga_beli']; ?>"
+                    <td> <label for="untung">Keuntungan (%) :</label></td>
+                    <td><input type="text" name="untung" value="<?php echo $br['untung']; ?>"
                             class="form-control"></td>
                 </tr>
                 <tr>

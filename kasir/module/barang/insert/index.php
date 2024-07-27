@@ -56,12 +56,16 @@ if (isset($_POST['submit'])) {
                     <td><input type="text" name="stok" class="form-control"></td>
                 </tr>
                 <tr>
-                    <td><label for="harga_jual">Harga Jual:</label></td>
-                    <td><input type="text" name="harga_jual" class="form-control"></td>
-                </tr>
-                <tr>
                     <td><label for="harga_beli">Harga Beli:</label></td>
                     <td><input type="text" name="harga_beli" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><label for="diskon">diskon:</label></td>
+                    <td><input type="text" name="diskon" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td><label for="untung">Keuntungan:</label></td>
+                    <td><input type="text" name="untung" class="form-control"></td>
                 </tr>
                 <tr>
                     <td></td>

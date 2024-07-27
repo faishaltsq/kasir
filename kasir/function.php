@@ -24,12 +24,17 @@ function edit_produk($edit)
     $id_barang = $edit["id_barang"];
     $nama_barang = $edit["nama_barang"];
     $stok = $edit["stok"];
-    $harga_jual = $edit["harga_jual"];
     $harga_beli = $edit["harga_beli"];
+    $diskon = $edit["diskon"];
+    $untung = $edit["untung"];
+    
+    $harga_diskon = $harga_beli - ($harga_beli * $diskon / 100);
+    $harga_untung = $harga_diskon + ($harga_diskon * $untung / 100);
 
-    //query insert data
-
-    $query = "UPDATE produk SET nama_barang='$nama_barang', stok='$stok', harga_jual='$harga_jual', harga_beli='$harga_beli' WHERE id_barang='$id_barang'";
+    $harga_final = $harga_untung;
+    
+    //query update data
+    $query = "UPDATE produk SET nama_barang='$nama_barang', stok='$stok', harga_beli='$harga_beli', diskon='$diskon', harga_final='$harga_final', untung='$untung' WHERE id_barang='$id_barang'";
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
@@ -59,8 +64,14 @@ function add_produk($add_produk)
     $nama_kategori = $add_produk["nama_kategori"];
     $nama_barang = $add_produk["nama_barang"];
     $stok = $add_produk["stok"];
-    $harga_jual = $add_produk["harga_jual"];
     $harga_beli = $add_produk["harga_beli"];
+    $diskon = $add_produk["diskon"];
+    $untung = $add_produk["untung"];
+    $harga_diskon = $harga_beli - ($harga_beli * $diskon / 100);
+    $harga_untung = $harga_diskon + ($harga_diskon * $untung / 100);
+
+    $harga_final = $harga_untung;
+
 
     // cek apakah nama_kategori ada dalam tabel kategori
     $query_cek_kategori = "SELECT id_kategori FROM kategori WHERE nama_kategori = '$nama_kategori'";
@@ -73,7 +84,7 @@ function add_produk($add_produk)
         $id_kategori = $row_kategori["id_kategori"];
 
         // query insert data
-        $query = "INSERT INTO produk (id_kategori, nama_barang, stok, harga_jual, harga_beli) VALUES ('$id_kategori', '$nama_barang', '$stok', '$harga_jual', '$harga_beli')";
+        $query = "INSERT INTO produk (id_kategori, nama_barang, stok, harga_beli,diskon,harga_final,untung) VALUES ('$id_kategori', '$nama_barang', '$stok', '$harga_beli','$diskon','$harga_final','$untung')";    
         mysqli_query($conn, $query);
 
         return mysqli_affected_rows($conn);
